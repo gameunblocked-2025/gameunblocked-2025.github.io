@@ -129,7 +129,7 @@ synacor.com, 82171, RESELLER, e108f11b2cdf7d5b
 yahoo.com, 59244, RESELLER
 loopme.com, 9718, RESELLER, 6c8d5f95897a5a3b
 ---------------------------------------------------------------------------------
-ad.plus, DIRECT
+ad.plus, NetworkCode, DIRECT
 
 google.com, pub-4573231550355221, RESELLER, f08c47fec0942fa0
 
