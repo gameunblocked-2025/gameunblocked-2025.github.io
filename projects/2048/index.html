@@ -36,6 +36,69 @@
     m.parentNode.insertBefore(a, m);
   })(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
 </script>
+	    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var anchorSlot;
+
+  googletag.cmd.push(function () {
+    anchorSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Anchor',
+      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+    );
+
+    if (anchorSlot) {
+      anchorSlot.addService(googletag.pubads());
+    }
+
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+    googletag.display(anchorSlot);
+  });
+
+  // Refresh the ad slot every 30 seconds
+  setInterval(function () {
+    if (anchorSlot) {
+      googletag.pubads().refresh([anchorSlot]);
+    }
+  }, 30000);
+</script>
+	    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var LeftSideRailSlot, RightSideRailSlot;
+
+  googletag.cmd.push(() => {
+    // Define left side rail ad slot
+    LeftSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
+    );
+    if (LeftSideRailSlot) {
+      LeftSideRailSlot.addService(googletag.pubads());
+    }
+
+    // Define right side rail ad slot
+    RightSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
+    );
+    if (RightSideRailSlot) {
+      RightSideRailSlot.addService(googletag.pubads());
+    }
+
+    // Enable services and display ads
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+    if (LeftSideRailSlot) googletag.display(LeftSideRailSlot);
+    if (RightSideRailSlot) googletag.display(RightSideRailSlot);
+  });
+
+  // Refresh both slots every 30 seconds
+  setInterval(function () {
+    googletag.pubads().refresh([LeftSideRailSlot, RightSideRailSlot]);
+  }, 30000);
+</script>
     </head>
     <body>
         <div class="container">
@@ -149,6 +212,24 @@
     </style>
 </head>
 <body>
+	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<div id="300x250-1"></div>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+
+  googletag.cmd.push(function () {
+    googletag.defineSlot(
+      '/21849154601,23300816471/Ad.Plus-300x250',
+      [300, 250],
+      '300x250-1'
+    ).addService(googletag.pubads());
+
+    googletag.enableServices();
+    googletag.display('300x250-1');
+  });
+</script>
     <h1>Best Unblocked Games Like 2048 (Puzzle Games for School)</h1>
     
     <p>If you're looking for fun, brain-teasing games similar to 2048 that you can play at school, you're in luck. Many unblocked puzzle games offer the same satisfying number-merging or tile-sliding mechanics while being accessible on school networks. These games provide mental stimulation while staying under the radar of school filters.</p>
