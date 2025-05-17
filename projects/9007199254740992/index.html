@@ -20,19 +20,6 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-<link rel="dns-prefetch" href="https://universal.wgplayer.com" />
-
-<!-- Async Script Loader for WGPlayer -->
-<script type="text/javascript" async>
-  (function(document, scriptUrl) {
-    var a = document.createElement("script");
-    var m = document.getElementsByTagName("script")[0];
-    a.async = true;
-    a.src = scriptUrl;
-    a.fetchPriority = 'high';
-    m.parentNode.insertBefore(a, m);
-  })(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-</script>
 </head>
 <script src="/js/main.js"></script>
 <body>
@@ -162,6 +149,37 @@
 	<hr>
 	
   </div>
+
+  <script>
+    // footer-loader.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Create a container for the footer
+    const footerContainer = document.createElement('div');
+    footerContainer.id = 'footer-container';
+    document.body.appendChild(footerContainer);
+    
+    // Load the footer content
+    fetch('footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+            // Fallback content if footer fails to load
+            footerContainer.innerHTML = `
+                <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+                    <p>© ${new Date().getFullYear()} onlygames. All rights reserved.</p>
+                </footer>
+            `;
+        });
+});
+  </script>
 
   <script src="js/animframe_polyfill.js"></script>
   <script src="js/keyboard_input_manager.js"></script>
