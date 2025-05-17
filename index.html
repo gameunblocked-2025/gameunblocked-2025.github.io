@@ -61,6 +61,48 @@
     googletag.display(interstitialSlot);
   });
 </script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  // Initialize googletag object
+  window.googletag = window.googletag || { cmd: [] };
+
+  // Declare ad slot variables
+  var LeftSideRailSlot, RightSideRailSlot;
+
+  googletag.cmd.push(() => {
+    // Define Left Side Rail slot
+    LeftSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
+    );
+    if (LeftSideRailSlot) {
+      LeftSideRailSlot.addService(googletag.pubads());
+    }
+
+    // Define Right Side Rail slot
+    RightSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
+    );
+    if (RightSideRailSlot) {
+      RightSideRailSlot.addService(googletag.pubads());
+    }
+
+    // Enable single request and activate services
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+
+    // Display the side rail ads
+    googletag.display(LeftSideRailSlot);
+    googletag.display(RightSideRailSlot);
+  });
+
+  // Refresh the ads every 30 seconds
+  setInterval(function() {
+    googletag.pubads().refresh([LeftSideRailSlot, RightSideRailSlot]);
+  }, 30000);
+</script>
 
   </head>
   <body onload="startTime()">
