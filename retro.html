@@ -18,35 +18,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var anchorSlot;
-
-  googletag.cmd.push(function () {
-    anchorSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Anchor',
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-    );
-
-    anchorSlot.addService(googletag.pubads());
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-    googletag.display(anchorSlot);
-  });
-
-  // Refresh the anchor ad every 30 seconds
-  setInterval(function () {
-    googletag.pubads().refresh([anchorSlot]);
-  }, 30000);
-</script>
-
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
   window.googletag = window.googletag || { cmd: [] };
 
   googletag.cmd.push(function () {
+    // Define the interstitial ad slot
     var interstitialSlot = googletag.defineOutOfPageSlot(
       '/21849154601,23300816471/Ad.Plus-Interstitial',
       googletag.enums.OutOfPageFormat.INTERSTITIAL
@@ -54,12 +30,89 @@
 
     if (interstitialSlot) {
       interstitialSlot.addService(googletag.pubads());
+
+      // Enable services and single request mode
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+
+      // Display the interstitial ad
+      googletag.display(interstitialSlot);
+    }
+  });
+</script>
+	  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var anchorSlot;
+
+  googletag.cmd.push(function () {
+    // Define the bottom anchor ad slot
+    anchorSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Anchor',
+      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+    );
+
+    if (anchorSlot) {
+      anchorSlot.addService(googletag.pubads());
+
+      // Enable services and single request mode
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+
+      // Display the anchor ad
+      googletag.display(anchorSlot);
+    }
+  });
+
+  // Refresh the anchor ad every 30 seconds
+  setInterval(function () {
+    if (anchorSlot) {
+      googletag.pubads().refresh([anchorSlot]);
+    }
+  }, 30000);
+</script>
+	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var LeftSideRailSlot, RightSideRailSlot;
+
+  googletag.cmd.push(function () {
+    // Define Left Side Rail ad slot
+    LeftSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
+    );
+    if (LeftSideRailSlot) {
+      LeftSideRailSlot.addService(googletag.pubads());
+      googletag.display(LeftSideRailSlot);
     }
 
+    // Define Right Side Rail ad slot
+    RightSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
+    );
+    if (RightSideRailSlot) {
+      RightSideRailSlot.addService(googletag.pubads());
+      googletag.display(RightSideRailSlot);
+    }
+
+    // Enable ad services with single request mode
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
-    googletag.display(interstitialSlot);
   });
+
+  // Refresh both side rail ads every 30 seconds
+  setInterval(function () {
+    const slotsToRefresh = [];
+    if (LeftSideRailSlot) slotsToRefresh.push(LeftSideRailSlot);
+    if (RightSideRailSlot) slotsToRefresh.push(RightSideRailSlot);
+    if (slotsToRefresh.length) {
+      googletag.pubads().refresh(slotsToRefresh);
+    }
+  }, 30000);
 </script>
   </head>
   <body onload="startTime()">
