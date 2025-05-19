@@ -76,7 +76,102 @@
       padding-bottom: 100px;
     }
   </style>
+  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+
+  googletag.cmd.push(function () {
+    // Define the interstitial ad slot
+    var interstitialSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Interstitial',
+      googletag.enums.OutOfPageFormat.INTERSTITIAL
+    );
+
+    // If successfully defined, configure and display
+    if (interstitialSlot) {
+      interstitialSlot.addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+      googletag.display(interstitialSlot);
+    }
+  });
+</script>
+  
+  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var LeftSideRailSlot, RightSideRailSlot;
+
+  googletag.cmd.push(function () {
+    // Define Left Side Rail ad slot
+    LeftSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
+    );
+    if (LeftSideRailSlot) {
+      LeftSideRailSlot.addService(googletag.pubads());
+      googletag.display(LeftSideRailSlot);
+    }
+
+    // Define Right Side Rail ad slot
+    RightSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
+    );
+    if (RightSideRailSlot) {
+      RightSideRailSlot.addService(googletag.pubads());
+      googletag.display(RightSideRailSlot);
+    }
+
+    // Enable services with single request
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+
+  // Refresh both side anchor ads every 30 seconds
+  setInterval(function () {
+    const slots = [];
+    if (LeftSideRailSlot) slots.push(LeftSideRailSlot);
+    if (RightSideRailSlot) slots.push(RightSideRailSlot);
+
+    if (slots.length > 0) {
+      googletag.pubads().refresh(slots);
+    }
+  }, 30000);
+</script>
+  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var anchorSlot;
+
+  googletag.cmd.push(function () {
+    // Define Bottom Anchor ad slot
+    anchorSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Anchor',
+      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+    );
+
+    if (anchorSlot) {
+      anchorSlot.addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+      googletag.display(anchorSlot);
+    }
+  });
+
+  // Refresh the anchor ad every 30 seconds
+  setInterval(function () {
+    if (anchorSlot) {
+      googletag.pubads().refresh([anchorSlot]);
+    }
+  }, 30000);
+</script>
+
 </head>
+  
 <body>
 
   <div class="top-ad">[Top Banner Ad]</div>
