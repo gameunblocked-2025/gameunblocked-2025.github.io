@@ -1,227 +1,104 @@
 <html>
-<head>
-  <title>BloonsTD 2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="bloonstd2.png" />
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #f4f4f4;
-    }
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGT67HE6EE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    .top-ad, .bottom-sticky-ad {
-      width: 100%;
-      height: 90px;
-      background: #ccc;
-      text-align: center;
-      line-height: 90px;
-      font-weight: bold;
-      z-index: 10;
-    }
+      gtag('config', 'G-R1ZCLH6XCR');
+    </script>
 
-    .game-layout {
-      display: flex;
-      justify-content: center;
-      margin: 10px auto;
-      max-width: 1200px;
-      position: relative;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BloonsTD 2</title>
+    <link rel="icon" type="image/x-icon" href="bloonstd2.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="bloonstd2.png" />
 
-    .side-ad {
-      width: 160px;
-      height: 600px;
-      background: #ddd;
-      text-align: center;
-      line-height: 600px;
-      margin: 0 10px;
-      display: none;
-    }
+    <!-- Ad.Plus GPT script for sticky ads -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
 
-    #game-wrapper {
-      position: relative;
-      width: 800px;
-      aspect-ratio: 4 / 3;
-      background: black;
-      z-index: 1;
-    }
+      var anchorSlot, leftSideSlot, rightSideSlot;
 
-    #ruffle {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-    }
+      googletag.cmd.push(function () {
+        // Bottom sticky banner
+        anchorSlot = googletag.defineOutOfPageSlot('/21849154601,23300816471/Ad.Plus-Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+        if(anchorSlot) anchorSlot.addService(googletag.pubads());
 
-    .bottom-sticky-ad {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #ffcf00;
-      color: #000;
-    }
+        // Left sticky side rail
+        leftSideSlot = googletag.defineOutOfPageSlot('/21849154601,23300816471/Ad.Plus-Side-Anchor', googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL);
+        if(leftSideSlot) leftSideSlot.addService(googletag.pubads());
 
-    /* Show side ads only on wide screens */
-    @media (min-width: 1100px) {
-      .side-ad {
-        display: block;
+        // Right sticky side rail
+        rightSideSlot = googletag.defineOutOfPageSlot('/21849154601,23300816471/Ad.Plus-Side-Anchor', googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL);
+        if(rightSideSlot) rightSideSlot.addService(googletag.pubads());
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+
+        googletag.display(anchorSlot);
+        googletag.display(leftSideSlot);
+        googletag.display(rightSideSlot);
+      });
+
+      // Refresh ads every 30 seconds (optional)
+      setInterval(function () {
+        googletag.pubads().refresh([anchorSlot, leftSideSlot, rightSideSlot]);
+      }, 30000);
+    </script>
+
+    <style>
+      /* Make sure body and html take full height */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden; /* prevent horizontal scroll */
       }
-    }
 
-    /* Prevent sticky ad from covering game */
-    body {
-      padding-bottom: 100px;
-    }
-  </style>
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+      /* Container for game player */
+      #ruffle {
+        position: fixed;
+        top: 0;
+        bottom: 60px; /* leave space for bottom sticky ad */
+        left: 120px; /* leave space for left sticky ad */
+        right: 120px; /* leave space for right sticky ad */
+        width: auto;
+        height: auto;
+      }
 
-<script>
-  window.googletag = window.googletag || { cmd: [] };
+      /* Game player fills container */
+      #player {
+        width: 100%;
+        height: 100%;
+      }
 
-  googletag.cmd.push(function () {
-    // Define the interstitial ad slot
-    var interstitialSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Interstitial',
-      googletag.enums.OutOfPageFormat.INTERSTITIAL
-    );
-
-    // If successfully defined, configure and display
-    if (interstitialSlot) {
-      interstitialSlot.addService(googletag.pubads());
-      googletag.pubads().enableSingleRequest();
-      googletag.enableServices();
-      googletag.display(interstitialSlot);
-    }
-  });
-</script>
-  
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var LeftSideRailSlot, RightSideRailSlot;
-
-  googletag.cmd.push(function () {
-    // Define Left Side Rail ad slot
-    LeftSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
-    );
-    if (LeftSideRailSlot) {
-      LeftSideRailSlot.addService(googletag.pubads());
-      googletag.display(LeftSideRailSlot);
-    }
-
-    // Define Right Side Rail ad slot
-    RightSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
-    );
-    if (RightSideRailSlot) {
-      RightSideRailSlot.addService(googletag.pubads());
-      googletag.display(RightSideRailSlot);
-    }
-
-    // Enable services with single request
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-  });
-
-  // Refresh both side anchor ads every 30 seconds
-  setInterval(function () {
-    const slots = [];
-    if (LeftSideRailSlot) slots.push(LeftSideRailSlot);
-    if (RightSideRailSlot) slots.push(RightSideRailSlot);
-
-    if (slots.length > 0) {
-      googletag.pubads().refresh(slots);
-    }
-  }, 30000);
-</script>
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var anchorSlot;
-
-  googletag.cmd.push(function () {
-    // Define Bottom Anchor ad slot
-    anchorSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Anchor',
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-    );
-
-    if (anchorSlot) {
-      anchorSlot.addService(googletag.pubads());
-      googletag.pubads().enableSingleRequest();
-      googletag.enableServices();
-      googletag.display(anchorSlot);
-    }
-  });
-
-  // Refresh the anchor ad every 30 seconds
-  setInterval(function () {
-    if (anchorSlot) {
-      googletag.pubads().refresh([anchorSlot]);
-    }
-  }, 30000);
-</script>
-
-</head>
-  
-<body>
-
-  <div class="top-ad">[Top Banner Ad]</div>
-
-  <div class="game-layout">
-    <div class="side-ad">[Left Ad]</div>
-
-    <div id="game-wrapper">
-      <div id="ruffle"></div>
-    </div>
-
-    <div class="side-ad">[Right Ad]</div>
-  </div>
-
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<div id="728x90-1"></div>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-
-  googletag.cmd.push(function () {
-    // Define 728x90 ad slot
-    googletag.defineSlot(
-      '/21849154601,23300816471/Ad.Plus-728x90',
-      [728, 90],
-      '728x90-1'
-    ).addService(googletag.pubads());
-
-    // Enable services and display the ad
-    googletag.enableServices();
-    googletag.display('728x90-1');
-  });
-</script>
-
-
-  <script src="ruffle.js"></script>
-  <script>
-    window.RufflePlayer = window.RufflePlayer || {};
-    window.addEventListener("load", () => {
-      const ruffle = window.RufflePlayer.newest();
-      const player = ruffle.createPlayer();
-      const container = document.getElementById("ruffle");
-      player.id = "player";
-      player.style.width = "100%";
-      player.style.height = "100%";
-      container.appendChild(player);
-      player.load("btd2.swf");
-    });
-  </script>
-
-</body>
+      /* Media queries for smaller screens */
+      @media (max-width: 768px) {
+        #ruffle {
+          left: 0;
+          right: 0;
+          bottom: 60px; /* still leave space for bottom ad */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/js/main.js"></script>
+    <div id="ruffle"></div>
+    <script src="ruffle.js"></script>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", () => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        container.appendChild(player);
+        player.load("btd2.swf");
+      });
+    </script>
+  </body>
 </html>
