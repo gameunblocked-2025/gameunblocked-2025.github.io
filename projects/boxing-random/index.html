@@ -1,141 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGT67HE6EE"></script>
-<meta charset="UTF-8">
-<title>Boxing Random Unblocked - Play it now at Only Games</title>
-<meta name="description" content="Play Boxing Random Unblocked – the ultimate free browser-based boxing simulator! Customize your fighter, master combos, and battle opponents anytime, anywhere. Ready to fight? Start now!">	
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGT67HE6EE"></script>
+  <meta charset="UTF-8">
+  <title>Boxing Random Unblocked - Play it now at Only Games</title>
+  <meta name="description" content="Play Boxing Random Unblocked – the ultimate free browser-based boxing simulator! Customize your fighter, master combos, and battle opponents anytime, anywhere. Ready to fight? Start now!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="Construct 3">
 
-<meta name="generator" content="Construct 3">
+  <link rel="manifest" href="appmanifest.json">
+  <link rel="stylesheet" href="style.css">
 
-	<link rel="manifest" href="appmanifest.json">
-
-
-<link rel="stylesheet" href="style.css">
-
-<script>
-window.addEventListener("keydown", function(e) {
-    // space and arrow keys
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+  <script>
+    window.addEventListener("keydown", function(e) {
+      if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
-    }
-}, false);
-</script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+      }
+    }, false);
+  </script>
 
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-
-  googletag.cmd.push(function() {
-    var interstitialSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Interstitial',
-      googletag.enums.OutOfPageFormat.INTERSTITIAL
-    );
-
-    if (interstitialSlot) {
-      interstitialSlot.addService(googletag.pubads());
+  <style>
+    /* Core layout styling */
+    html, body {
+      margin: 0;
+      background-color: aliceblue;
+      padding: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-
-    googletag.display(interstitialSlot);
-  });
-</script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var anchorSlot;
-
-  googletag.cmd.push(function () {
-    anchorSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Anchor',
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-    );
-
-    if (anchorSlot) {
-      anchorSlot.addService(googletag.pubads());
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-    googletag.display(anchorSlot);
-  });
-
-  // Refresh the anchor ad every 30 seconds
-  setInterval(function () {
-    if (anchorSlot) {
-      googletag.pubads().refresh([anchorSlot]);
-    }
-  }, 30000);
-</script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var LeftSideRailSlot, RightSideRailSlot;
-
-  googletag.cmd.push(function () {
-    // Define Left Side Rail Slot
-    LeftSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
-    );
-
-    if (LeftSideRailSlot) {
-      LeftSideRailSlot.addService(googletag.pubads());
+    #navbar-placeholder {
+      flex: 0 0 auto;
     }
 
-    // Define Right Side Rail Slot
-    RightSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
-    );
-
-    if (RightSideRailSlot) {
-      RightSideRailSlot.addService(googletag.pubads());
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
     }
 
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-
-    // Display both side rail slots
-    if (LeftSideRailSlot) googletag.display(LeftSideRailSlot);
-    if (RightSideRailSlot) googletag.display(RightSideRailSlot);
-  });
-
-  // Refresh both side rail ads every 30 seconds
-  setInterval(function () {
-    const slotsToRefresh = [];
-    if (LeftSideRailSlot) slotsToRefresh.push(LeftSideRailSlot);
-    if (RightSideRailSlot) slotsToRefresh.push(RightSideRailSlot);
-
-    if (slotsToRefresh.length > 0) {
-      googletag.pubads().refresh(slotsToRefresh);
+    #footer-container {
+      flex: 0 0 auto;
+      margin: 0;
+      padding: 0;
     }
-  }, 30000);
-</script>
 
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+      #footer-container {
+      margin-top: 15px;
+      flex-shrink: 0; /* prevent shrinking */
+    }
+
+    #navbar-placeholder {
+      margin-bottom: 15px;
+    }
+
+    /* Remove overflow on inner elements if any */
+    iframe, div, section {
+      overflow: visible !important;
+    }
+  </style>
 </head>
-<body style="overflow:hidden;">
-<div id="fb-root"></div>
-	<script src="box2d.wasm.js"></script>
-	<noscript>
-		<div id="notSupportedWrap">
-			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
-			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-		</div>
-	</noscript>
-	<script src="scripts/supportcheck.js"></script>
-	<script src="scripts/offlineclient.js"></script>
-	<script src="scripts/main.js"></script>
-	<script src="scripts/register-sw.js"></script>
-  <script src="js/analytics_ubg_v1_4.js"></script>
-  <script src="js/ubg235_client_v1_2.js"></script>
 
-  
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        function updateClock() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString();
+          const clock = document.getElementById('clock');
+          if (clock) {
+            clock.textContent = timeString;
+          }
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+      });
+  </script>
+
+  <!-- Game Canvas and Scripts -->
+  <main>
+    <div id="fb-root"></div>
+    <script src="box2d.wasm.js"></script>
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+      </div>
+    </noscript>
+    <script src="scripts/supportcheck.js"></script>
+    <script src="scripts/offlineclient.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/register-sw.js"></script>
+    <script src="js/analytics_ubg_v1_4.js"></script>
+    <script src="js/ubg235_client_v1_2.js"></script>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const footerContainer = document.getElementById('footer-container');
+
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(data => {
+          footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          footerContainer.innerHTML = `
+            <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+              <p>© ${new Date().getFullYear()} onlygames. All rights reserved.</p>
+            </footer>
+          `;
+        });
+    });
+  </script>
+
 </body>
 </html>
