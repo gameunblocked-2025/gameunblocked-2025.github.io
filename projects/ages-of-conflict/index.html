@@ -9,142 +9,211 @@
   <link rel="stylesheet" href="TemplateData/style.css" />
 
   <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
 
-  header {
-    background-color: #222;
-    padding: 20px;
-    text-align: center;
-  }
+    main {
+      flex: 1;
+    }
 
-  header h1 {
-    margin: 0;
-    color: #fff;
-    font-size: 24px;
-  }
+    header {
+      background-color: #222;
+      padding: 20px;
+      text-align: center;
+    }
 
-  .filter-bar {
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 10px;
-    max-width: 900px;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: start;
-  }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
 
-  .filter-bar button {
-    background-color: #d33;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: default;
-  }
+    .filter-bar {
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
 
-  .filter-bar a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
+    .filter-bar button {
+      background-color: #d33;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: default;
+    }
 
-  .filter-bar a:hover {
-    color: #ff5555;
-  }
+    .filter-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
 
-  /* Unity Game Layout Fix */
-  #unity-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-    background-color: #111;
-  }
+    .filter-bar a:hover {
+      color: #ff5555;
+    }
 
-  #unity-canvas {
-    width: 100%;
-    max-width: 1280px;
-    aspect-ratio: 16 / 9;
-    display: block;
-    background: #111;
-  }
+    #unity-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+    }
 
-  /* Unity UI loader/footer */
-  #unity-footer {
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    color: #ccc;
-    font-size: 14px;
-  }
+    #unity-canvas {
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16 / 9;
+      display: block;
+      background: #111;
+    }
 
-  #unity-warning {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
-  }
+    #unity-footer {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      color: #ccc;
+      font-size: 14px;
+    }
 
-  footer {
-    background-color: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-</style>
+    #unity-warning {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
 
+    .promo-section {
+      background-color: #b5772f;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .promo-section h2 {
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 28px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .promo-section button,
+    .promo-section .custom-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .promo-section .wishlist {
+      background-color: #3c5a98;
+      color: white;
+      border: none;
+    }
+
+    .promo-section .start-btn {
+      background-color: #eee;
+      border: 2px solid #333;
+    }
+
+    .promo-section .map-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 20px;
+    }
+
+    .promo-section .map-arrow {
+      font-size: 32px;
+      cursor: pointer;
+      color: black;
+    }
+
+    .promo-section .map-thumb {
+      width: 80px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
+  <main>
+    <header>
+      <h1>Ages of Conflict</h1>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <h1>Ages of Conflict</h1>
-  </header>
+    <div class="filter-bar">
+      <button>Sort by:</button>
+      <a href="#">All</a>
+      <a href="#">FNAF</a>
+      <a href="#">Moto X3M</a>
+      <a href="#">Snail Bob</a>
+      <a href="#">Vex</a>
+    </div>
 
-  <!-- Filter Bar -->
-  <div class="filter-bar">
-    <button>Sort by:</button>
-    <a href="#">All</a>
-    <a href="#">FNAF</a>
-    <a href="#">Moto X3M</a>
-    <a href="#">Snail Bob</a>
-    <a href="#">Vex</a>
-  </div>
-
-  <!-- Unity Game Container -->
-  <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas"></canvas>
-    <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
+    <div class="promo-section">
+      <h2>AGES OF CONFLICT</h2>
+      <button class="wishlist">💙 Wishlist on Steam!</button>
+      <button class="start-btn">Start</button>
+      <div>
+        <button class="custom-btn">Create Custom Map</button>
+      </div>
+      <p>Skull Island<br><small>Land Area: 5684</small></p>
+      <div class="map-controls">
+        <span class="map-arrow">&#8592; A</span>
+        <img src="your-map-image1.png" alt="Map 1" class="map-thumb" />
+        <img src="your-map-image2.png" alt="Map 2" class="map-thumb" />
+        <img src="your-map-image3.png" alt="Map 3" class="map-thumb" />
+        <span class="map-arrow">D &#8594;</span>
       </div>
     </div>
-    <div id="unity-warning"></div>
-    <div id="unity-footer">
-      <div id="unity-webgl-logo"></div>
-      <div id="unity-fullscreen-button"></div>
-      <div id="unity-build-title">Ages of Conflict</div>
-    </div>
-  </div>
 
-  <!-- Unity Loader Script -->
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"></div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Ages of Conflict</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Ages of Conflict. All rights reserved.
+  </footer>
+
   <script>
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
@@ -163,7 +232,7 @@
       if (type == "error") div.style = "background: red; padding: 10px;";
       else {
         if (type == "warning") div.style = "background: yellow; padding: 10px;";
-        setTimeout(function () {
+        setTimeout(() => {
           warningBanner.removeChild(div);
           updateBannerVisibility();
         }, 5000);
@@ -216,11 +285,5 @@
     };
     document.body.appendChild(script);
   </script>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Ages of Conflict. All rights reserved.
-  </footer>
-
 </body>
 </html>
