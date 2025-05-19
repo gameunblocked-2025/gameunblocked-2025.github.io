@@ -103,6 +103,39 @@
     googletag.pubads().refresh([LeftSideRailSlot, RightSideRailSlot]);
   }, 30000);
 </script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var anchorSlot;
+
+  googletag.cmd.push(function () {
+    // Define the anchor ad slot
+    anchorSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Anchor-Small',
+      googletag.enums.OutOfPageFormat.TOP_ANCHOR
+    );
+
+    if (anchorSlot) {
+      anchorSlot.addService(googletag.pubads());
+    }
+
+    // Enable single request mode
+    googletag.pubads().enableSingleRequest();
+
+    // Enable services
+    googletag.enableServices();
+
+    // Display the anchor slot
+    googletag.display(anchorSlot);
+  });
+
+  // Refresh the anchor ad every 30 seconds
+  setInterval(function () {
+    if (anchorSlot) {
+      googletag.pubads().refresh([anchorSlot]);
+    }
+  }, 30000);
+</script>
 
   </head>
   <body onload="startTime()">
