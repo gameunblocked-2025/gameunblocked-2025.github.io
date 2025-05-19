@@ -106,33 +106,41 @@
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
   window.googletag = window.googletag || { cmd: [] };
-  var anchorSlot;
+  var LeftSideRailSlot, RightSideRailSlot;
 
   googletag.cmd.push(function () {
-    // Define the anchor ad slot
-    anchorSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Anchor-Small',
-      googletag.enums.OutOfPageFormat.TOP_ANCHOR
+    // Define the left side rail ad slot
+    LeftSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
     );
-
-    if (anchorSlot) {
-      anchorSlot.addService(googletag.pubads());
+    if (LeftSideRailSlot) {
+      LeftSideRailSlot.addService(googletag.pubads());
+      googletag.display(LeftSideRailSlot);
     }
 
-    // Enable single request mode
+    // Define the right side rail ad slot
+    RightSideRailSlot = googletag.defineOutOfPageSlot(
+      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
+      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
+    );
+    if (RightSideRailSlot) {
+      RightSideRailSlot.addService(googletag.pubads());
+      googletag.display(RightSideRailSlot);
+    }
+
+    // Enable single request mode and initialize services
     googletag.pubads().enableSingleRequest();
-
-    // Enable services
     googletag.enableServices();
-
-    // Display the anchor slot
-    googletag.display(anchorSlot);
   });
 
-  // Refresh the anchor ad every 30 seconds
+  // Refresh both side rail slots every 30 seconds
   setInterval(function () {
-    if (anchorSlot) {
-      googletag.pubads().refresh([anchorSlot]);
+    var slotsToRefresh = [];
+    if (LeftSideRailSlot) slotsToRefresh.push(LeftSideRailSlot);
+    if (RightSideRailSlot) slotsToRefresh.push(RightSideRailSlot);
+    if (slotsToRefresh.length) {
+      googletag.pubads().refresh(slotsToRefresh);
     }
   }, 30000);
 </script>
