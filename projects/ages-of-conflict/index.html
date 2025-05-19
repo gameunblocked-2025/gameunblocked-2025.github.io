@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGT67HE6EE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R1ZCLH6XCR');
-  </script>
-
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ages of Conflict</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico" />
   <link rel="stylesheet" href="TemplateData/style.css" />
+
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
     }
 
+    header {
+      background-color: #222;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+
+    .filter-bar button {
+      background-color: #d33;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    .filter-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .filter-bar a:hover {
+      color: #ff5555;
+    }
+
+    /* Unity Container */
     #unity-container {
       width: 100%;
       display: flex;
@@ -36,113 +78,35 @@
       display: block;
     }
 
-    #footer-container {
-      background-color: #333;
-      color: #fff;
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #ccc;
       text-align: center;
-      margin-top: 550px;
+      padding: 20px;
+      margin-top: 40px;
     }
-
-    
   </style>
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-
-  googletag.cmd.push(function() {
-    var interstitialSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Interstitial',
-      googletag.enums.OutOfPageFormat.INTERSTITIAL
-    );
-
-    if (interstitialSlot) {
-      interstitialSlot.addService(googletag.pubads());
-    }
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-
-    googletag.display(interstitialSlot);
-  });
-</script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var anchorSlot;
-
-  googletag.cmd.push(function () {
-    anchorSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Anchor',
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-    );
-
-    if (anchorSlot) {
-      anchorSlot.addService(googletag.pubads());
-    }
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-    googletag.display(anchorSlot);
-  });
-
-  // Refresh the anchor ad every 30 seconds
-  setInterval(function () {
-    if (anchorSlot) {
-      googletag.pubads().refresh([anchorSlot]);
-    }
-  }, 30000);
-</script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var LeftSideRailSlot, RightSideRailSlot;
-
-  googletag.cmd.push(function () {
-    // Define Left Side Rail Slot
-    LeftSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
-    );
-
-    if (LeftSideRailSlot) {
-      LeftSideRailSlot.addService(googletag.pubads());
-    }
-
-    // Define Right Side Rail Slot
-    RightSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
-    );
-
-    if (RightSideRailSlot) {
-      RightSideRailSlot.addService(googletag.pubads());
-    }
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-
-    // Display both side rail slots
-    if (LeftSideRailSlot) googletag.display(LeftSideRailSlot);
-    if (RightSideRailSlot) googletag.display(RightSideRailSlot);
-  });
-
-  // Refresh both side rail ads every 30 seconds
-  setInterval(function () {
-    const slotsToRefresh = [];
-    if (LeftSideRailSlot) slotsToRefresh.push(LeftSideRailSlot);
-    if (RightSideRailSlot) slotsToRefresh.push(RightSideRailSlot);
-
-    if (slotsToRefresh.length > 0) {
-      googletag.pubads().refresh(slotsToRefresh);
-    }
-  }, 30000);
-</script>
-
 </head>
+
 <body>
+
+  <!-- Header -->
+  <header>
+    <h1>Ages of Conflict</h1>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button>Sort by:</button>
+    <a href="#">All</a>
+    <a href="#">FNAF</a>
+    <a href="#">Moto X3M</a>
+    <a href="#">Snail Bob</a>
+    <a href="#">Vex</a>
+  </div>
+
+  <!-- Unity Game Container -->
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
@@ -158,9 +122,6 @@
       <div id="unity-build-title">Ages of Conflict</div>
     </div>
   </div>
-
-  <!-- Footer container -->
-  <div id="footer-container"></div>
 
   <!-- Unity Loader Script -->
   <script>
@@ -208,10 +169,8 @@
       meta.content = "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
       document.getElementsByTagName("head")[0].appendChild(meta);
       container.className = "unity-mobile";
-
       canvas.style.width = window.innerWidth + "px";
       canvas.style.height = window.innerHeight + "px";
-
       unityShowBanner("WebGL builds are not supported on mobile devices.");
     } else {
       canvas.style.width = "1280px";
@@ -237,6 +196,10 @@
     document.body.appendChild(script);
   </script>
 
-  
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ages of Conflict. All rights reserved.
+  </footer>
+
 </body>
 </html>
