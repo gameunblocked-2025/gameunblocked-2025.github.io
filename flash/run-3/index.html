@@ -1,5 +1,14 @@
 <html>
   <head>
+    <style>
+      #footer-container {
+      margin-top: 15px;
+    }
+
+    #navbar-placeholder {
+      margin-bottom: 15px;
+    }
+    </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGT67HE6EE"></script>
 <script>
@@ -15,6 +24,30 @@
     <link rel="shortcut icon" type="image/x-icon" href="run-3.png" />
   </head>
   <body>
+
+     <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        function updateClock() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString();
+          const clock = document.getElementById('clock');
+          if (clock) {
+            clock.textContent = timeString;
+          }
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+      });
+  </script>
+
+
     <div id="ruffle" width="100%" height="100%"></div>
 <script>
     window.RufflePlayer = window.RufflePlayer || {};
@@ -29,5 +62,32 @@
     });
 </script>
 <script src="ruffle/ruffle.js"></script>
-  </body>
+
+  <!-- Footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const footerContainer = document.createElement('div');
+      footerContainer.id = 'footer-container';
+      footerContainer.style.marginBottom = '0';
+      document.body.appendChild(footerContainer);
+
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(data => {
+          footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          footerContainer.innerHTML = `
+            <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center; margin-bottom: 0;">
+              <p>© ${new Date().getFullYear()} onlygames. All rights reserved.</p>
+            </footer>
+          `;
+        });
+    });
+  </script>
+  </body>
 </html>
