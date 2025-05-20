@@ -9,29 +9,53 @@
     <meta name="description" content="Play BlackJack online for free—test your skills, beat the dealer, and enjoy realistic casino graphics. Join now and master the classic card game!">
     <link rel="stylesheet" href="blackjack.css" />
     <script src="blackjack.js"></script>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <!-- DNS prefetch for performance -->
+<link rel="dns-prefetch" href="https://universal.wgplayer.com" />
 
+<!-- WGPlayer script loader -->
+<script type="text/javascript" async>
+  (function(document, src) {
+    var script = document.createElement("script");
+    var firstScript = document.getElementsByTagName("script")[0];
+
+    script.async = true;
+    script.src = src;
+    script.fetchPriority = "high";
+
+    firstScript.parentNode.insertBefore(script, firstScript);
+  })(
+    document,
+    "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname +
+    "&wp=" + window.location.pathname +
+    "&ws=" + window.location.search
+  );
+</script>
+
+    <!-- Load Google Publisher Tag script -->
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<!-- Ad container -->
+<div id="970x250-1"></div>
+
+<!-- GPT ad setup script -->
 <script>
   window.googletag = window.googletag || { cmd: [] };
 
   googletag.cmd.push(function() {
-    var interstitialSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Interstitial',
-      googletag.enums.OutOfPageFormat.INTERSTITIAL
-    );
+    googletag.defineSlot(
+      '/21849154601,23300816471/Ad.Plus-970x250',
+      [970, 250],
+      '970x250-1'
+    ).addService(googletag.pubads());
 
-    if (interstitialSlot) {
-      interstitialSlot.addService(googletag.pubads());
-    }
-
-    googletag.pubads().enableSingleRequest();
     googletag.enableServices();
-
-    googletag.display(interstitialSlot);
+    googletag.display('970x250-1');
   });
 </script>
+<!-- Load Google Publisher Tag script -->
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
+<!-- GPT Anchor Ad Setup -->
 <script>
   window.googletag = window.googletag || { cmd: [] };
   var anchorSlot;
@@ -44,11 +68,10 @@
 
     if (anchorSlot) {
       anchorSlot.addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+      googletag.display(anchorSlot);
     }
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-    googletag.display(anchorSlot);
   });
 
   // Refresh the anchor ad every 30 seconds
@@ -58,69 +81,33 @@
     }
   }, 30000);
 </script>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-<script>
-  window.googletag = window.googletag || { cmd: [] };
-  var LeftSideRailSlot, RightSideRailSlot;
-
-  googletag.cmd.push(function () {
-    // Define Left Side Rail Slot
-    LeftSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
-    );
-
-    if (LeftSideRailSlot) {
-      LeftSideRailSlot.addService(googletag.pubads());
-    }
-
-    // Define Right Side Rail Slot
-    RightSideRailSlot = googletag.defineOutOfPageSlot(
-      '/21849154601,23300816471/Ad.Plus-Side-Anchor',
-      googletag.enums.OutOfPageFormat.RIGHT_SIDE_RAIL
-    );
-
-    if (RightSideRailSlot) {
-      RightSideRailSlot.addService(googletag.pubads());
-    }
-
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-
-    // Display both side rail slots
-    if (LeftSideRailSlot) googletag.display(LeftSideRailSlot);
-    if (RightSideRailSlot) googletag.display(RightSideRailSlot);
-  });
-
-  // Refresh both side rail ads every 30 seconds
-  setInterval(function () {
-    const slotsToRefresh = [];
-    if (LeftSideRailSlot) slotsToRefresh.push(LeftSideRailSlot);
-    if (RightSideRailSlot) slotsToRefresh.push(RightSideRailSlot);
-
-    if (slotsToRefresh.length > 0) {
-      googletag.pubads().refresh(slotsToRefresh);
-    }
-  }, 30000);
-</script>
-<link rel="dns-prefetch" href="https://universal.wgplayer.com" />
-
-<script type="text/javascript" async>
-  !function(e, t) {
-    var a = e.createElement("script"),
-        m = e.getElementsByTagName("script")[0];
-    
-    a.async = 1;
-    a.src = t;
-    a.fetchPriority = 'high';
-    
-    m.parentNode.insertBefore(a, m);
-  }(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-</script>
 
   </head>
   <body>
+
+    <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        function updateClock() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString();
+          const clock = document.getElementById('clock');
+          if (clock) {
+            clock.textContent = timeString;
+          }
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+      });
+  </script>
+
+
     <div id="dealer">
       <h2>Dealer Cards: <span id="dealerSum"></span></h2>
       <div id="dealerCards" class="cards">
@@ -136,5 +123,33 @@
     <button id="split" class="button">Split</button>
     <div id="refreshContainer"></div>
     <p id="results"></p>
-  </body>
+
+    <!-- Footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const footerContainer = document.createElement('div');
+      footerContainer.id = 'footer-container';
+      footerContainer.style.marginBottom = '0';
+      document.body.appendChild(footerContainer);
+
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(data => {
+          footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          footerContainer.innerHTML = `
+            <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center; margin-bottom: 0;">
+              <p>© ${new Date().getFullYear()} onlygames. All rights reserved.</p>
+            </footer>
+          `;
+        });
+    });
+  </script>
+
+  </body>
 </html>
