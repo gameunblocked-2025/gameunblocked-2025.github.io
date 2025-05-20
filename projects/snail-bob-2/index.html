@@ -18,6 +18,21 @@
     
             <!-- Include the HTML5 API -->
             <script type="text/javascript" src="patch/js/gameplayer-io-api.js?cdn.gameplayer.io/api/js/game.js"></script>
+		<link rel="dns-prefetch" href="https://universal.wgplayer.com" />
+
+<script type="text/javascript" async>
+  !function(e, t) {
+    var a = e.createElement("script"),
+        m = e.getElementsByTagName("script")[0];
+    
+    a.async = 1;
+    a.src = t;
+    a.fetchPriority = 'high';
+    
+    m.parentNode.insertBefore(a, m);
+  }(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
+</script>
+
         </head>
         <body style="margin: 0px; padding: 0px; background: #000;">
             <div id="main_container"></div>
