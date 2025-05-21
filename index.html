@@ -167,20 +167,22 @@
   </head>
   <body onload="startTime()">
   
-
-   <div class="menubar">
-  <div class="topnav">
-  <a class="active" href="index.html">Games</a>
-  <a href="retro.html">Retro</a>
-  <a href="flash.html">Flash</a>
-			  <div class="topnav-right">
-	<a href="feedback.html"><img src="feedback.png" alt="Description for image" width="15" height="15"></a>
-	<a href="info.html"><img src="info.png" alt="Description for image" width="15" height="15"></a>
-	<a id="txt"></a>
-	<a id="hide">Hide</a>
-  </div>
-  </div>
-  </div> 
+<!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+          function updateClock() {
+            const now = new Date();
+            const clock = document.getElementById('clock');
+            if (clock) clock.textContent = now.toLocaleTimeString();
+          }
+          setInterval(updateClock, 1000);
+          updateClock();
+        });
+    </script>
          
   <div class="unblocked-text">
     <h1 class="text-center">All Unblocked Games</h1>
