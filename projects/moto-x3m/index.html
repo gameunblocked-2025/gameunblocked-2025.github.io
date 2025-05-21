@@ -78,27 +78,22 @@
 
 <body>
 
-      <!-- Navbar -->
-  <div id="navbar-placeholder"></div>
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-
-        function updateClock() {
-          const now = new Date();
-          const timeString = now.toLocaleTimeString();
-          const clock = document.getElementById('clock');
-          if (clock) {
-            clock.textContent = timeString;
+     <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+          function updateClock() {
+            const now = new Date();
+            const clock = document.getElementById('clock');
+            if (clock) clock.textContent = now.toLocaleTimeString();
           }
-        }
-
-        setInterval(updateClock, 1000);
-        updateClock();
-      });
-  </script>
+          setInterval(updateClock, 1000);
+          updateClock();
+        });
+    </script>
 
     <div id="content"></div>
     <div id="orientation"></div>
