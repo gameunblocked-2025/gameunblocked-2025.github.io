@@ -59,44 +59,64 @@
             firstJS.parentNode.insertBefore(fgJS, firstJS);
             })(document, 'js/start.js?e=');
     </script>
-  <link rel="dns-prefetch" href="https://universal.wgplayer.com" />
-
-<script type="text/javascript" async>
-  !function(e, t) {
-    var a = e.createElement("script"),
-        m = e.getElementsByTagName("script")[0];
-    
-    a.async = 1;
-    a.src = t;
-    a.fetchPriority = 'high';
-    
-    m.parentNode.insertBefore(a, m);
-  }(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-</script>
-
 </head>
 
 <body>
-  <!-- Navbar -->
-    <div id="navbar-placeholder"></div>
-    <script>
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('navbar-placeholder').innerHTML = data;
-          function updateClock() {
-            const now = new Date();
-            const clock = document.getElementById('clock');
-            if (clock) clock.textContent = now.toLocaleTimeString();
+
+      <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        function updateClock() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString();
+          const clock = document.getElementById('clock');
+          if (clock) {
+            clock.textContent = timeString;
           }
-          setInterval(updateClock, 1000);
-          updateClock();
-        });
-    </script>
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+      });
+  </script>
+
     <div id="content"></div>
     <div id="orientation"></div>
     <div id="loader">Loading ...</div>
     <script src="js/analytics_ubg_v1_4.js"></script>
-    <script src="js/ubg235_client_v1_1.js"></script> 
-  </body>
+    <script src="js/ubg235_client_v1_1.js"></script>
+
+     <!-- Footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const footerContainer = document.createElement('div');
+      footerContainer.id = 'footer-container';
+      footerContainer.style.marginBottom = '0';
+      document.body.appendChild(footerContainer);
+
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(data => {
+          footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          footerContainer.innerHTML = `
+            <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center; margin-bottom: 0;">
+              <p>© ${new Date().getFullYear()} onlygames. All rights reserved.</p>
+            </footer>
+          `;
+        });
+    });
+  </script> 
+
+</body>  
 </html>
