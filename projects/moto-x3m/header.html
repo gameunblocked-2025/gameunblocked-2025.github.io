@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Navbar</title>
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
   <style>
     * {
@@ -14,36 +13,36 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      height: 100%;
+      overflow-x: auto;
     }
 
     body {
       padding-top: 60px;
     }
 
- .navbar {
-         background-color: #0b0b1d;
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  white-space: nowrap;
-  overflow: visible; /* 👈 FIX: No scrolling here */
-      
-    }
+    .navbar {
+      background-color: #0b0b1d;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      white-space: nowrap;
+    }
 
-  .navbar-container {
-    display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 24px;
-  height: 60px;
-  flex-wrap: nowrap;
-  width: 100%;
-  /* overflow-x: auto; 👈 Move scroll here */
-    }
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 24px;
+      height: 60px;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow-x: auto;
+    }
+
     .nav-left,
     .nav-middle {
       display: flex;
@@ -99,34 +98,19 @@
       white-space: nowrap;
     }
 
-    .retro {
-       background-color: #c0392b !important; 
-    }
-    .retro:hover{
-       background-color: #c9c9c9 !important;
-    }
-    .flash {
-      background-color: #c0392b !important;
-    }
-    .flash:hover{
-      background-color: #c9c9c9 !important;
-    }
+    .retro,
+    .flash,
     .games {
       background-color: #c0392b;
     }
 
-    .games:  hover {
-      background-color: #c9c9c9 !important;
-    }
-
-
     .retro:hover,
     .flash:hover,
     .games:hover {
-      background-color: #c9c9c9;
+      background-color: #c9c9c9 !important;
+      color: black;
     }
 
-    /* Dropdown Menu */
     .dropdown {
       position: relative;
     }
@@ -143,10 +127,6 @@
       white-space: nowrap;
       padding: 5px 0;
       min-width: 160px;
-
-      /* Force no scroll */
-      max-height: unset;
-      overflow: visible;
     }
 
     .dropdown:hover .dropdown-menu {
@@ -160,13 +140,20 @@
       font-size: 13px;
       text-decoration: none;
     }
-    .navbar-oneline{
+
+    .dropdown-menu a:hover {
+      background-color: #c0392b !important;
+      color: white;
+    }
+
+    .navbar-oneline {
       display: flex !important;
     }
 
-    .dropdown-menu a:hover {
-      background-color: #c0392b !important;;
-      color: white;
+    .main-content {
+      min-height: 200vh; /* 👈 Make the page scrollable */
+      padding: 20px;
+      background: #f4f4f4;
     }
 
     @media (max-width: 768px) {
@@ -198,7 +185,6 @@
         <a href="/projects/soccer-random/index.html">Soccer-Random</a>
         <a href="/projects/mario/index.html">Mario</a>
 
-        <!-- Dropdown -->
         <div class="dropdown">
           <a href="#">More ▾</a>
           <div class="dropdown-menu">
@@ -215,6 +201,12 @@
     </div>
   </div>
 
-  
+  <!-- 👇 Fake content added to enable scrolling -->
+  <div class="main-content">
+    <h2>Welcome to Cool Math Games</h2>
+    <p>This is placeholder content to make the screen scrollable. You can replace it with your actual content, game iframe, or other elements.</p>
+    <p>Keep scrolling down...</p>
+  </div>
+
 </body>
 </html>
