@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      #footer-container {
+  position: relative;
+  z-index: 2;
+                        }
+        #content {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 200px; /* Adjust based on your footer height */
+        }
+        canvas, iframe, #content {
+  max-height: calc(100vh - 200px); /* leave space for footer */
+  overflow: hidden;
+       }
+       footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+    </style>
 </head>
 <body>
 
