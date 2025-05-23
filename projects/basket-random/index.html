@@ -134,24 +134,19 @@ window.addEventListener("keydown", function(e) {
 </script>
 
 </head>
-<body style="overflow:hidden; display: flex; justify-content: center; align-items: center; height: 100vh; background: #000;">
-  <div id="fb-root"></div>
-
-  <div id="game-wrapper" style="width: 800px; height: 600px; position: relative; overflow: hidden;">
-    <!-- Canvas will be injected here by Construct -->
-  </div>
-
-  <script src="box2d.wasm.js"></script>
-  <noscript>
-    <div id="notSupportedWrap">
-      <h2 id="notSupportedTitle">This content requires JavaScript</h2>
-      <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-      <p class="notSupportedMessage">This game was developed with Construct. <a href="https://www.construct.net/en">Build your own games</a></p>
-    </div>
-  </noscript>
-  <script src="scripts/supportcheck.js"></script>
-  <script src="scripts/offlineclient.js"></script>
-  <script src="scripts/main.js"></script>
-  <script src="scripts/register-sw.js"></script>
+<body style="overflow:hidden;">
+<div id="fb-root"></div>
+	<script src="box2d.wasm.js"></script>
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+			<p class="notSupportedMessage">This game was developed with Construct. <a href="https://www.construct.net/en">Build your own games</a></p>
+		</div>
+	</noscript>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/register-sw.js"></script>
 </body>
 </html>
