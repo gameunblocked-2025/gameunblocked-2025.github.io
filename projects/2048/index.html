@@ -24,10 +24,30 @@
         <meta property="og:description" content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!" />
         <meta property="og:image" content="meta/og_image.png" />
  
+<!-- Load the GPT library asynchronously -->
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<!-- Ad container -->
+<div id="970x250-1"></div>
+
+<!-- Define and display the ad slot -->
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+
+  googletag.cmd.push(function () {
+    googletag.defineSlot(
+      '/21849154601,23300816471/Ad.Plus-970x250', // Ad unit path
+      [970, 250],                                 // Ad size
+      '970x250-1'                                 // ID of the ad container div
+    ).addService(googletag.pubads());
+
+    googletag.enableServices();
+    googletag.display('970x250-1');
+  });
+</script>
 
   </head>
     <body>
-	    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> <div id="300x600-1"> <script> window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() { googletag.defineSlot('/21849154601,23300816471/Ad.Plus-300x600', [300, 600], '300x600-1').addService(googletag.pubads()); googletag.enableServices(); googletag.display('300x600-1'); }); </script> </div>
         <div class="container">
             <div class="heading">
                 <h1 class="title">2048</h1>
