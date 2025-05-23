@@ -11,14 +11,6 @@ html, body, canvas {
 	touch-action: none;
 	touch-action-delay: none;
 }
- canvas {
-    width: 50% !important;
-    height: 50% !important;
-    max-width: 600px;
-    max-height: 400px;
-    display: block;
-    margin: 0 auto;
-  }
 
 #notSupportedWrap {
 	margin: 2em auto 1em auto;
