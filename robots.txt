@@ -1,4 +1,4 @@
 User-agent: *
 User-agent: Mediapartners-Google
 
-Sitemap: https://faf-games.github.io/sitemap.xml
+Sitemap: https://gameunblocked-2025.github.io/sitemap.xml
