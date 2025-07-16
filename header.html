@@ -1,114 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- bootstrap link -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <title>Navbar</title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      padding-top: 60px;
+    }
+
+.navbar {
+         background-color: #333333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  white-space: nowrap;
+  overflow: visible; /* 👈 FIX: No scrolling here */
+      
+    }
+
+.navbar-container {
+    display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 24px;
+  height: 60px;
+  flex-wrap: nowrap;
+  width: 100%;
+  /* overflow-x: auto; 👈 Move scroll here */
+    }
+    .nav-left,
+    .nav-middle {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .nav-left {
+      margin-right: 20px;
+    }
+
+    .nav-left a {
+      background: none;
+      border: none;
+      color: white;
+      margin-right: 10px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-left .active {
+      background-color: #c0392b;
+    }
+
+    .nav-middle a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 17px;
+      letter-spacing: 1px;
+      padding: 8px;
+      position: relative;
+    }
+
+    .nav-middle a:hover {
+      background-color: #c9c9c9;
+      color: black;
+      border-radius: 8px;
+    }
+
+    .search-box {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      background-color: white;
+      color: #2c2c2c;
+      font-size: 14px;
+      box-shadow: 2px 2px 5px #00000060;
+      white-space: nowrap;
+    }
+
+    .retro {
+       background-color: #c0392b !important; 
+    }
+    .retro:hover{
+       background-color: #c9c9c9 !important;
+    }
+    .flash {
+      background-color: #c0392b !important;
+    }
+    .flash:hover{
+      background-color: #c9c9c9 !important;
+    }
+    .games {
+      background-color: #c0392b;
+    }
+
+    .games:  hover {
+      background-color: #c9c9c9 !important;
+    }
 
 
-    <style>
-.custom-navbar {
-  background: linear-gradient(to right, #5a5a5a, #707070); /* similar to your screenshot */
-  padding: 10px 0;
-  font-family: 'Poppins', sans-serif;
-}
+    .retro:hover,
+    .flash:hover,
+    .games:hover {
+      background-color: #c9c9c9;
+    }
 
-.custom-navbar .nav-link {
-  padding: 8px 12px;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
 
-.custom-navbar .nav-link:hover {
-  color: #FFB400 !important;
-}
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333333;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      z-index: 1001;
+      white-space: nowrap;
+      padding: 15px 10px;
+      min-width: 160px;
 
+      /* Force no scroll */
+      max-height: unset;
+      overflow: visible;
+    }
 
-    </style>
-    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .navbar-oneline{
+      display: flex !important;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #c0392b !important;;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-container {
+        flex-wrap: wrap;
+      }
+
+      .search-box {
+        margin-top: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Area Start -->
-       <nav class="navbar navbar-expand-lg custom-navbar">
-  <div class="container d-flex justify-content-between align-items-center">
-    
-    <!-- Logo + Title -->
-    <a class="navbar-brand text-white fw-semibold" href="/index.html">
-      <img src="../images/logo.jpeg" alt="site logo" style="width: 60px; height:auto; ">
-    </a>
+  <div class="navbar">
+    <div class="navbar-container navbar-oneline">
+      <div class="nav-left">
+        <a href="/index.html" class="active games">Games</a>
+        <a href="/retro.html" class="retro">Retro</a>
+        <a href="/flash.html" class="flash">Flash</a>
+      </div>
 
-    <!-- Toggle Button for Mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navigation Menu -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link text-white" href="/category/running">Running</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/puzzle">Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/racing">Racing</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/skill">Skill</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/sports">Sports</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/car">Car</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/category/twoplayer">2 Player Games</a></li>
+      <div class="nav-middle">
+        <a href="https://docs.google.com/document/d/19MJckEDfv3vLoBZF4LgUiGP-TysihX_UW1JJBNOVZMQ/edit?tab=t.0#heading=h.nl3f7wa5u6ji">ALT Links</a>
+        <a href="/projects/core-ball/index.html">Core-Ball</a>
+        <a href="/projects/moto-x3m/index.html">Moto-X3M</a>
+        <a href="/projects/tunnel-rush/index.html">Tunnel-Rush</a>
+        <a href="/projects/a-small-world-cup/index.html">A-Small-World-Cup</a>
+        <a href="/projects/soccer-random/index.html">Soccer-Random</a>
+        <a href="/projects/mario/index.html">Mario</a>
 
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">More</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/category/idle.html">Idle</a></li>
-            <li><a class="dropdown-item" href="/category/shooting.html">Shooting</a></li>
-            <li><a class="dropdown-item" href="/category/action.html">Action</a></li>
-            <li><a class="dropdown-item" href="/category/adventure.html">Adventure</a></li>
-            <li><a class="dropdown-item" href="/category/fighting.html">Fighting</a></li>
-             <li><a class="dropdown-item" href="/category/moto.html">Moto</a></li> 
-              <li><a class="dropdown-item" href="/category/multiplayer.html">Multiplayer</a></li>
-              <li><a class="dropdown-item" href="/category/new.html">New</a></li>
-              <li><a class="dropdown-item" href="/category/popular.html">Popular</a></li>
-              <li><a class="dropdown-item" href="/category/stickman.html">Stickman</a></li>
-              <li><a class="dropdown-item" href="/category/threed.html">Threed</a></li>
-          </ul>
-        </li>
-        
-      </ul>
+        <div class="dropdown">
+          <a href="#">More ▾</a>
+          <div class="dropdown-menu">
+            <a href="/projects/blackjack/index.html">BlackJack</a>
+            <a href="/projects/snail-bob-4/index.html">Snail Bob 4</a>
+            <a href="/projects/snail-bob-6/index.html">Snail Bob 6</a>
+            <a href="/projects/smash-karts/index.html">Smash Karts</a>
+            <a href="/projects/drift-boss/index.html">Drift Boss</a>
+          </div>
+        </div>
 
-      <!-- Search Box -->
-      <!-- <form class="d-flex ms-3">
-        <input class="form-control form-control-sm" type="search" placeholder="Search 250+ games" aria-label="Search">
-      </form> -->
+
+      </div>
     </div>
   </div>
-</nav>
 
-
-    <!-- Header Area End -->
-<script>
-fetch('/games.json')
-  .then(response => response.json())
-  .then(games => {
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    dropdownMenu.innerHTML = ""; // Clear any existing items
-
-    games.forEach(game => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.className = "dropdown-item";
-      a.href = game.url || "#";
-      a.textContent = game.title;
-      li.appendChild(a);
-      dropdownMenu.appendChild(li);
-    });
-  })
-  .catch(error => {
-    console.error("Failed to load games:", error);
-  });
-</script>
-
-
+  
 </body>
 </html>
