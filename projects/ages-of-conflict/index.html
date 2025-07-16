@@ -1,218 +1,90 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDMD431R9T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-ZDMD431R9T');
-</script>
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDMD431R9T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZDMD431R9T');
+  </script>
+
+  <!-- ✅ Basic Meta Setup -->
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ages of Conflict - Play Strategy War Game Online</title>
-<meta name="description" content="Play Ages of Conflict, a unique strategy war simulation game where nations rise and fall. Enjoy endless scenarios and dynamic AI battles.">
-<meta name="keywords" content="Ages of Conflict, strategy game, war simulation, online war game, AI battles, nation simulator, GitHub.io games, Unblocked games, GitHub games">
-<link rel="canonical" href="https://gameunblocked-2025.github.io/projects/ages-of-conflict/index.html">
-<meta name="robots" content="index, follow">
-  <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Play Ages of Conflict, a real-time war simulation strategy game where nations rise and fall. Battle AI-controlled countries in endless dynamic scenarios. Free & unblocked!" />
+  <meta name="keywords" content="Ages of Conflict, war simulation game, strategy game online, unblocked strategy game, real-time war game, nation simulator, GitHub.io games, Unblocked games" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gameunblocked-2025.github.io/projects/ages-of-conflict/index.html" />
+
+  <!-- ✅ Favicon & Styles -->
+  <link rel="shortcut icon" href="TemplateData/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="TemplateData/style.css" />
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
+  <!-- ✅ Open Graph (Social Sharing) -->
+  <meta property="og:title" content="Ages of Conflict - Strategy War Simulator" />
+  <meta property="og:description" content="Control nations, create war strategies, and watch empires rise and fall in Ages of Conflict. Play online, free and unblocked!" />
+  <meta property="og:url" content="https://gameunblocked-2025.github.io/projects/ages-of-conflict/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GameUnblocked" />
+  <meta property="og:image" content="https://gameunblocked-2025.github.io/projects/ages-of-conflict/meta/og_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-    main {
-      flex: 1;
-    }
+  <!-- ✅ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Ages of Conflict",
+    "url": "https://gameunblocked-2025.github.io/projects/ages-of-conflict/index.html",
+    "image": "https://gameunblocked-2025.github.io/projects/ages-of-conflict/meta/og_image.png",
+    "description": "Ages of Conflict is a real-time war simulator strategy game. Experience nations rising and falling with dynamic AI battles. Free and unblocked online play.",
+    "author": {
+      "@type": "Organization",
+      "name": "GameUnblocked"
+    },
+    "applicationCategory": "StrategyGame"
+  }
+  </script>
 
-    header {
-      background-color: #222;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      color: white;
-    }
-
-    .filter-bar {
-      background-color: #333;
-      padding: 10px 20px;
-      border-radius: 10px;
-      max-width: 900px;
-      margin: 20px auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .filter-bar button {
-      background-color: #d33;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: default;
-    }
-
-    .filter-bar a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .filter-bar a:hover {
-      color: #ff5555;
-    }
-
-    #unity-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      width: 100%;
-    }
-
-    #unity-canvas {
-      width: 100%;
-      max-width: 1280px;
-      aspect-ratio: 16 / 9;
-      display: block;
-      background: #111;
-    }
-
-    #unity-footer {
-      width: 100%;
-      max-width: 1280px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    #unity-warning {
-      color: red;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .promo-section {
-      background-color: #b5772f;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .promo-section h2 {
-      font-family: 'Press Start 2P', sans-serif;
-      font-size: 28px;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .promo-section button,
-    .promo-section .custom-btn {
-      margin: 10px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .promo-section .wishlist {
-      background-color: #3c5a98;
-      color: white;
-      border: none;
-    }
-
-    .promo-section .start-btn {
-      background-color: #eee;
-      border: 2px solid #333;
-    }
-
-    .promo-section .map-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      gap: 20px;
-    }
-
-    .promo-section .map-arrow {
-      font-size: 32px;
-      cursor: pointer;
-      color: black;
-    }
-
-    .promo-section .map-thumb {
-      width: 80px;
-      height: auto;
-      object-fit: cover;
-    }
-
-    footer {
-      background-color: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-
-<script type="text/javascript">
+  <!-- ✅ Microsoft Clarity -->
+  <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "rojs7of1hu");
-</script>
-  
-  <link rel="dns-prefetch" href="https://universal.wgplayer.com" />
+  </script>
 
-<script type="text/javascript" async>
-  !function(e, t) {
-    var a = e.createElement("script"),
-        m = e.getElementsByTagName("script")[0];
-    
-    a.async = 1;
-    a.src = t;
-    a.fetchPriority = 'high';
-    
-    m.parentNode.insertBefore(a, m);
-  }(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-</script>
-<link rel="dns-prefetch" href="https://universal.wgplayer.com" />
-
-<script type="text/javascript" async>
-  !function(e, t) {
-    var a = e.createElement("script"),
-        m = e.getElementsByTagName("script")[0];
-    
-    a.async = 1;
-    a.src = t;
-    a.fetchPriority = 'high';
-    
-    m.parentNode.insertBefore(a, m);
-  }(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-</script>
+  <!-- ✅ Ad Scripts / Other Trackers (Your current ad scripts here) -->
+  <!-- Place your Google Ad Manager or AdSense scripts below this line -->
 
 </head>
+
 <body>
+
+<!-- navbar code start from here -->
+<div id="header-container"></div>
+
+<script>
+  fetch("/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading header:", error));
+</script>
+<!-- navbar code is ended here -->
+
+  
   <main>
     <header>
       <h1>Ages of Conflict</h1>
@@ -246,9 +118,18 @@
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 Ages of Conflict. All rights reserved.
-  </footer>
+  <!-- Footer Load using js -->
+      <div id="footer-container"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+      <!-- Footer load code are ended here -->
 
   <script>
     var container = document.querySelector("#unity-container");
