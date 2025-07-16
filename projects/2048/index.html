@@ -201,6 +201,20 @@
     </div>
   </div>
 
+  
+	<!-- Footer Load using js -->
+      <div id="footer-container"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+      <!-- Footer load code are ended here -->
+
   <!-- ✅ Scripts -->
   <script src="js/animframe_polyfill.js"></script>
   <script src="js/hammer.min.js"></script>
